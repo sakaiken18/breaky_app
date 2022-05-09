@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'posts/update'
   get 'posts/destroy'
   root 'breakys#index' 
+  
 end
