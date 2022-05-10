@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -10,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.create!
+    post = Post.create!(post_params)
     redirect_to post
   end
 
@@ -29,5 +30,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :image)
   end
-  
+
 end
